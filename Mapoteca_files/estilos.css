@@ -1,0 +1,107 @@
+/*.jumbotron {
+    position: relative;
+    background: #000 url("casa.jpg") center center;
+    width: 100%;
+    height: 30%;
+    background-size: cover;
+    overflow: hidden;
+}*/
+
+@font-face {
+    font-family: latobold;
+    src: url(fonts/lato-bol.ttf);
+}
+
+
+#atlas, #secretaria {
+
+	color:#043B5C;
+	font-weight: bold;
+	text-shadow: 1px 1px #045c52;
+}
+
+#secretaria{
+
+	font-family: latobold;
+
+}
+
+#atlas{
+
+	font-size: 2.5em;
+}
+
+/*.navbar-inverse {
+    background-color: #f08755;
+    border-color: #e37e4f;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-weight: bold;
+}*/
+
+.jumbotron{
+
+	background-color: white;
+	border: 4px solid #043B5C;
+}
+
+.navbar{
+
+	border: 4px solid #043B5C;
+}
+
+#myNavbar > ul > li.active > a{ 
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+#myNavbar > ul > li > a{ 
+    color: #043B5C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fblogo {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3px;
+    height: 40px; 
+}
+
+#images{
+    text-align:right;
+}
+
+.panel-footer {
+    background-color: transparent;
+    border-bottom-left-radius: 3px #043B5C;
+    border-bottom-right-radius: 3px #043B5C;
+    border-top: 2px solid #043B5C;
+    padding: 10px 15px;
+}
+
+.panel-default {
+    border-color: transparent;
+    text-align: center;
+}
+
+.glyphicon-align-justify::before {
+    content: "";
+    color: #043B5C;
+}
+
+span.glyphicon-file, span.glyphicon-signal {
+    font-size: 5.2em;
+    color: #d4d4d4;
+}
+
+span.glyphicon-signal {
+    font-size: 5em;
+    color: #d4d4d4;
+    padding-right: 0.1em;
+}
