@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>ATLAS SGPP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Mapoteca_files/bootstrap.css">
+  <link rel="stylesheet" href="Mapoteca_files/estilos.css">
+   <link rel="stylesheet" href="Mapoteca_files/style.css">
+  <script src="Mapoteca_files/jquery.js"></script>
+  <script src="Mapoteca_files/bootstrap.js"></script>
+    <script src="Mapoteca_files/func.js"></script>
+
+</head>
+<body>
+<div class="container">
+	<!--<nav class="navbar navbar">
+    <div class="container-fluid">
+<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca del proyecto</a></li>
+        <li><a href="#">Contacto</a></li> 
+
+      </ul>
+      <div id="images">
+  <img src="Mapoteca_files/marcatucuman2.png" class="fblogo">
+<img src="Mapoteca_files/logogobierno2.png" class="fblogo">
+                
+    </div>
+    </div> 
+
+    </div>
+</nav> -->
+  <div class="jumbotron">
+
+  	
+    <h1 id="atlas">Ejemplo Mapoteca GeosPlan</h1>      
+    
+   
+  </div>
+    <div class="container-fluid">
+  <form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingresar búsqueda" type="text">
+  </div>
+   <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+</form>
+</div>
+  <div class="row">
+  	<div class="col-sm-4">
+                <!-- MENÚ PRINCIPAL DIMENSIONES -->
+                <ul class="list-group level-1">
+                    <li class="list-group-item">Categorías</li>
+                    
+                            <li class="list-group-item"><a id="D1" class="bg-color-01 dimension_particular" onclick="Principal('D1');">Urbanización</a></li>
+                        
+                            <li class="list-group-item"><a id="D2" class="bg-color-02 dimension_particular active" onclick="Principal('D2');">Infraestructura</a></li>
+                        
+                            <li class="list-group-item"><a id="D3" class="bg-color-03 dimension_particular" onclick="Principal('D3');">Geoestadística</a></li>
+                        
+                            <li class="list-group-item"><a id="D4" class="bg-color-04 dimension_particular" onclick="Principal('D4');">Desarrollo social y salud</a></li>
+                        
+                            <li class="list-group-item"><a id="D5" class="bg-color-05 dimension_particular" onclick="Principal('D5');">Medio ambiente y producción</a></li>
+                        
+                            <li class="list-group-item"><a id="D6" class="bg-color-06 dimension_particular" onclick="Principal('D6');">Cultura y turismo</a></li>
+                        
+                            <li class="list-group-item"><a id="D7" class="bg-color-07 dimension_particular" onclick="Principal('D7');">Obras y Servicios públicos</a></li>
+
+                            <li class="list-group-item"><a id="D8" class="bg-color-08 dimension_particular" onclick="Principal('D8');">Mapas escolares</a></li>
+                        
+                </ul>
+            </div>
+
+            <!-- panel inicial con texto -->
+            <div class="col-sm-8" id="texto" style="">
+                <div class="box1" style="text-align: justify;">
+                    
+                    
+                    <p>Elija una categoría para visualizar el listado de temáticas</p>
+
+
+
+                    
+                </div>
+            </div>
+            <!-- panel inicial con texto -->
+
+            <div class="col-sm-4">
+                
+                        <div id="D1_div" style="display: none;" class="box boxcolor1 dimension">
+                            <h3 class="bg-color-01">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T4" style="cursor: pointer;" onclick="MostrarIndicadores('T4');">Expansión urbana</a></li>
+                                    
+                                        
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D2_div" style="display: none;" class="box boxcolor2 dimension">
+                            <h3 class="bg-color-02">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T9" style="cursor: pointer;" onclick="MostrarIndicadores('T9');">Servicios públicos</a></li>
+
+                                        <li class="list-group-item"><a class="tematica_particular" id="T10" style="cursor: pointer;" onclick="MostrarIndicadores('T10');">Infraestructura social</a></li>
+
+                                        <li class="list-group-item"><a class="tematica_particular" id="T11" style="cursor: pointer;" onclick="MostrarIndicadores('T11');">Infraestructura edilicia</a></li>
+                                    
+                                        
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D3_div" style="display: none;" class="box boxcolor3 dimension">
+                            <h3 class="bg-color-03">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T12" style="cursor: pointer;" onclick="MostrarIndicadores('T12');">Educación</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T13" style="cursor: pointer;" onclick="MostrarIndicadores('T13');">Social</a></li>
+
+                                        <li class="list-group-item"><a class="tematica_particular" id="T14" style="cursor: pointer;" onclick="MostrarIndicadores('T14');">Equipamiento en hogares</a></li>
+
+                                        <li class="list-group-item"><a class="tematica_particular" id="T21" style="cursor: pointer;" onclick="MostrarIndicadores('T21');">Demografía</a></li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D4_div" style="display: none;" class="box boxcolor4 dimension">
+                            <h3 class="bg-color-04">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T15" style="cursor: pointer;" onclick="MostrarIndicadores('T15');">Salud</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T16" style="cursor: pointer;" onclick="MostrarIndicadores('T16');">Desarrollo social</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T17" style="cursor: pointer;" onclick="MostrarIndicadores('T17');">Trabajo y vivienda</a></li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D5_div" style="display: none;" class="box boxcolor5 dimension">
+                            <h3 class="bg-color-05">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T18" style="cursor: pointer;" onclick="MostrarIndicadores('T18');">Ordenamiento de territorio</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T19" style="cursor: pointer;" onclick="MostrarIndicadores('T19');">Medio ambiente</a></li>
+
+                                        <li class="list-group-item"><a class="tematica_particular" id="T20" style="cursor: pointer;" onclick="MostrarIndicadores('T20');">Producción</a></li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D6_div" style="display: none;" class="box boxcolor6 dimension">
+                            <h3 class="bg-color-06">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T23" style="cursor: pointer;" onclick="MostrarIndicadores('T23');">Infraestructura</a></li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="D7_div" style="display: none;" class="box boxcolor7 dimension">
+                            <h3 class="bg-color-07">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T28" style="cursor: pointer;" onclick="MostrarIndicadores('T28');">Seguridad ciudadana</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T35" style="cursor: pointer;" onclick="MostrarIndicadores('T35');">Servicios públicos</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T27" style="cursor: pointer;" onclick="MostrarIndicadores('T27');">Obras públicas</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T26" style="cursor: pointer;" onclick="MostrarIndicadores('T26');">Transporte y movilidad</a></li>
+                                    
+                            </ul>
+                        </div>
+
+                        <div id="D8_div" style="display: none;" class="box boxcolor8 dimension">
+                            <h3 class="bg-color-08">Tématica</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item"><a class="tematica_particular" id="T29" style="cursor: pointer;" onclick="MostrarIndicadores('T29');">Mapas oficiales</a></li>
+                                    
+                                        <li class="list-group-item"><a class="tematica_particular" id="T30" style="cursor: pointer;" onclick="MostrarIndicadores('T30');">Mapas temáticos</a></li>                                    
+                            </ul>
+                        </div>
+                    
+            </div>
+
+            <div class="col-sm-4">
+                
+                        <div id="T15_div" style="display: none;" class="box boxcolor4 tematica">
+                            <h3 class="bg-color-04">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_0_hl_indicador_0" href="#">Camas hospitalarias por departamento <span class="badge">en elaboración</span></a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_0_hl_indicador_1" href="#">Tasa de mortalidad infantil <span class="badge">en elaboración</span></a>
+                                        </li>
+                                                                        
+                            </ul>
+                        </div>
+                    
+                        <div id="T23_div" style="display: none;" class="box boxcolor6 tematica">
+                            <h3 class="bg-color-06">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Infraestructura turística</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+
+                        <div id="T20_div" style="display: none;" class="box boxcolor5 tematica">
+                            <h3 class="bg-color-05">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Mapa de Áreas Productivas</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Mapa de las principales industrias en la provincia</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Mapa del Área Tabacalera</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Mapa del Área Frutihortícola</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Área cañera e ingenios azucareros</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_1_hl_indicador_0" href="#">Infraestructura hídrica actual</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T4_div" style="display: none;" class="box boxcolor1 tematica">
+                            <h3 class="bg-color-01">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <!-- <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_2_hl_indicador_0" href="#" data-toggle="modal" data-target="#myModal"><img src="Mapoteca_files/hacinamiento.png" alt="HTML tutorial" style="width:70px;height:90px;border:0;">Déficit habitacional cualitativo</a>
+                                        </li> -->
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_2_hl_indicador_1" href="#" data-toggle="modal" data-target="#myModal">GSMT - Tejidos residenciales expansión 1991-2010</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_2_hl_indicador_1" href="#" data-toggle="modal" data-target="#myModal">GSMT - Variación de densidad de población</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_2_hl_indicador_1" href="#" data-toggle="modal" data-target="#myModal">Grado de urbanización y ruralidad</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_2_hl_indicador_1" href="#" data-toggle="modal" data-target="#myModal">Tamaño de las ciudades</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T9_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_3_hl_indicador_0" href="#">Infraestructura de energía eléctrica y gasífera</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_3_hl_indicador_1" href="#">Caracterización esquemática conectiva vial</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T16_div" style="display: none;" class="box boxcolor4 tematica">
+                            <h3 class="bg-color-04">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_4_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/default.aspx#">Programa de empleo independiente</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_4_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/default.aspx#">Programa de asignación universal por hijo, por departamento</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T18_div" style="display: none;" class="box boxcolor5 tematica">
+                            <h3 class="bg-color-05">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_5_hl_indicador_0" href="#">Situación pedemonte</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T10_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2" style="overflow-y:scroll;">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_0" href="#">Porcentaje de hogares con gas en red 2010 departamental</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Porcentaje de hogares con desagüe en red 2010 departamental</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Porcentaje de hogares con agua en red 2010 departamental</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Viviendas particulares con instalación sanitaria</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Hogares según provisión de agua dentro de la vivienda</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Hogares con baño/letrina</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Calidad de conexión de servicios básicos</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Combustible usado principalmente para cocinar: Gas en Red</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Propietarios de la vivienda y el terreno</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Material de los pisos en viviendas</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_6_hl_indicador_1" href="#">Habitaciones por hogares</a>
+                                        </li>
+
+
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T5_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_7_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=50">Urbanización y ruralidad </a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T3_div" style="display: none;" class="box boxcolor1 tematica">
+                            <h3 class="bg-color-01">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_8_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=70">Tasa de escolarización secundaria</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_8_hl_indicador_1" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=71">Índice de capacitación de la población </a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T28_div" style="display: none;" class="box boxcolor7 tematica">
+                            <h3 class="bg-color-07">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_9_hl_indicador_0" href="#">Mapa de la división territorial de policía por unidad regional</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_9_hl_indicador_0" href="#">Observatorio vial: Accidentes 2013</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T35_div" style="display: none;" class="box boxcolor7 tematica">
+                            <h3 class="bg-color-07">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_10_hl_indicador_0" href="#">NAC</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_10_hl_indicador_0" href="#">Edificios gubernamentales</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T6_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_11_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=89">Jerarquía urbana</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T22_div" style="display: none;" class="box boxcolor6 tematica">
+                            <h3 class="bg-color-06">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_12_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=75">Presencia de principios de acceso al suelo urbano y rural en las Constituciones Provinciales</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T12_div" style="display: none;" class="box boxcolor3 tematica">
+                            <h3 class="bg-color-03">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Indice de capacitación de la población</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Tasa de escolarización secundaria</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Mapa de matriculas Nivel Inicial</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Mapa de matriculas Nivel primario</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Mapa de matriculas Nivel secundario</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Tasa de repitencia del nivel secundario</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Tasa de sobreedad en el nivel secundario</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Porcentaje de analfabetismo</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Población con tres años y más que utilizan computadora</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_13_hl_indicador_0" href="#">Sedes programa terminalidad secundaria</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T13_div" style="display: none;" class="box boxcolor3 tematica">
+                            <h3 class="bg-color-03">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_14_hl_indicador_0" href="#">Deficit habitacional cualitativo </a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_14_hl_indicador_1" href="#">Hogares con NBI en  la Provincia de Tucumán 2010</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_14_hl_indicador_2" href="#">Porcentaje de población con NBI</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_14_hl_indicador_2" href="#">Hacinamiento crítico 2010 por radios censales</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_14_hl_indicador_2" href="#">Porcentaje de hogares con privación material departamental 2001</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T7_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_15_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=57">Tejidos residenciales en áreas de expansión urbana</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_15_hl_indicador_1" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=77">Densidades de población</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_15_hl_indicador_2" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=79">Consumo de suelo por habitante</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T1_div" style="display: none;" class="box boxcolor1 tematica">
+                            <h3 class="bg-color-01">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_16_hl_indicador_0" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=64">Índice de dependencia potencial</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_16_hl_indicador_1" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=82">Saldo migratorio</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_16_hl_indicador_2" href="http://atlasid.planificacion.gob.ar/indicador.aspx?id=83">Variación de población y de hogares</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T17_div" style="display: none;" class="box boxcolor4 tematica">
+                            <h3 class="bg-color-04">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_17_hl_indicador_0" href="#">Condición de actividad económica</a>
+                                        </li>
+                                                                        
+                            </ul>
+                        </div>
+                    
+                        <div id="T11_div" style="display: none;" class="box boxcolor2 tematica">
+                            <h3 class="bg-color-02">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_18_hl_indicador_0" href="#">Cantidad de vivienda por tipo</a>
+                                        </li>
+
+                            </ul>
+                        </div>
+
+                        <div id="T14_div" style="display: none;" class="box boxcolor3 tematica">
+                            <h3 class="bg-color-03">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_18_hl_indicador_0" href="#">Hogares con heladera</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_18_hl_indicador_0" href="#">Hogares con computadoras</a>
+                                        </li>
+
+                            </ul>
+                        </div>
+                    
+                        <div id="T2_div" style="display: none;" class="box boxcolor1 tematica">
+                            <h3 class="bg-color-01">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_19_hl_indicador_0" href="#">Camas hospitalarias cada mil habitantes<span class="badge">en elaboración</span></a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_19_hl_indicador_1" href="#">Tasa de mortalidad infantil<span class="badge">en elaboración</span></a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T27_div" style="display: none;" class="box boxcolor7 tematica">
+                            <h3 class="bg-color-07">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_20_hl_indicador_0" href="#">Red de fibra óptica: avances 2014</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_20_hl_indicador_0" href="#">Infraestructura de energía eléctrica planificada</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_20_hl_indicador_0" href="#">SIPPE año 2014</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T21_div" style="display: none;" class="box boxcolor3 tematica">
+                            <h3 class="bg-color-03">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_21_hl_indicador_0" href="#">Población total</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_21_hl_indicador_1" href="#">Densidad poblacional</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_21_hl_indicador_2" href="#">Natalidad</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_21_hl_indicador_2" href="#">Defunciones totales</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_21_hl_indicador_2" href="#">Defunciones infantiles</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T19_div" style="display: none;" class="box boxcolor5 tematica">
+                            <h3 class="bg-color-05">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_22_hl_indicador_0" href="#">Espacios verdes GSMT</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_22_hl_indicador_1" href="#">Áreas protegidas</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_22_hl_indicador_2" href="#">Ordenamiento territorial por cuencas hídricas</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+                    
+                        <div id="T26_div" style="display: none;" class="box boxcolor7 tematica">
+                            <h3 class="bg-color-07">Mapa</h3>
+                            <ul class="list-group level-2">
+                                
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_23_hl_indicador_0" href="#">Infraestructura conectiva vial</a>
+                                        </li>
+                                    
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_23_hl_indicador_1" href="#">GSMT - Accesibilidad al transporte público</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_23_hl_indicador_1" href="#">GSMT - Cobertura de transporte público</a>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a id="Cuerpo_rp_tematicas3_rp_indicadores3_23_hl_indicador_1" href="#">GSMT - Subutilización de la red de transporte público</a>
+                                        </li>
+                                    
+                            </ul>
+                        </div>
+    
+
+   
+   
+ </div>
+</div>
+<br>
+<br>
+<br>
+<div class="panel panel-default">
+  
+  <div class="panel-footer">2015 - Gobierno de Tucumán</div>
+</div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Información del mapa</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active" id="General"><a href="#general" role="tab" onclick="Grabo('General');" data-toggle="tab">Ficha técnica</a></li>
+                                
+                                <!--<li id="Descargas"><a href="#material" role="tab" onclick="Grabo('Descargas');" data-toggle="tab">Material elaborado</a></li>-->
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="general">
+
+
+                                    <div class="col-sm-12 col-md-6">
+
+                                        <div class="box-white">
+                                        <h1>Descargar mapa</h1>
+                                        <a href="http://geosplan.tucuman.gob.ar/inicio/AtlasID/hacinamiento.png" download="w3logo"><img src="Mapoteca_files/hacinamiento.png" alt="HTML tutorial" style="width:300px;height:400px;border:0;"></a>
+                                        
+
+                                            <h1>Descripción</h1>
+                                            <span id="Cuerpo_lbl_Definicion"><p>Muestra la situación de hogares que habitan en viviendas deficitarias; es 
+decir, aquellas cuyas condiciones de estado y localización requieren reparaciones, mejoras o completamiento.</p></span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6">
+
+                                         <div class="box-white">
+                                            <h1>Fuente</h1>
+                                            <span id="Cuerpo_lbl_UnidadDeMedida">Fuente del Mapa</span>
+                                        </div> 
+
+                                    </div>
+                                    <!-- end col left -->
+
+                                 
+                                    <!-- end col right -->
+
+                                    <!-- indicadores de referencia -->
+                                   
+                                    <!-- end indicadores de referencia-->
+
+                                    <!-- botones de navegacion -->
+                                   
+                                    <!--  end botones de navegacion -->
+
+                                </div>
+                                <!-- tabpane -->
+
+                            <!-- tab-content -->
+
+                        
+
+                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div></body></html>
